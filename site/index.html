@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Iris — a Video.js 10 skin</title>
+    <meta name="description" content="Iris is a skin for Video.js 10, shaped like a camera lens: a round play button with a progress ring, dials for volume and speed, and a preview that opens from a circle to the whole frame." />
+    <meta property="og:title" content="Iris — a Video.js 10 skin" />
+    <meta property="og:description" content="A Video.js 10 skin shaped like a camera lens. Made by Sabik Biswas for the Video.js Skins Design Challenge." />
+    <meta property="og:image" content="https://iris-player.netlify.app/og.jpg" />
+    <meta property="og:url" content="https://iris-player.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://iris-player.netlify.app/" />
+    <meta name="theme-color" content="#0d0e10" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Geist+Mono:wght@400;500&display=swap" />
+    <link rel="preconnect" href="https://stream.mux.com" crossorigin />
+    <link rel="preconnect" href="https://image.mux.com" crossorigin />
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="bar">
+      <a class="brand" href="#top" aria-label="Iris, back to top">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.2" /><path d="M16 10.8L29 18.3M20.5 13.4v15M20.5 18.6L7.5 26.1M16 21.2L3 13.7M11.5 18.6v-15M11.5 13.4l13-7.5" /></svg>
+        <span>Iris</span>
+      </a>
+      <nav aria-label="Sections">
+        <a href="#instrument">Controls</a>
+        <a href="#coatings">Any site</a>
+        <a href="#states">States</a>
+        <a href="#thinking">Design</a>
+        <a href="#specs">Specs</a>
+        <a href="#access">Accessibility</a>
+        <a href="#install">Install</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-t">
+        <div class="ring" aria-hidden="true">
+          <svg viewBox="0 0 1200 1200">
+            <g class="ring-focus">
+              <circle class="r-hair" cx="600" cy="600" r="596" />
+              <circle class="r-knurl" cx="600" cy="600" r="575" />
+              <circle class="r-hair" cx="600" cy="600" r="552" />
+              <g class="dial">
+                <circle class="r-ticks" cx="600" cy="600" r="534" />
+                <g class="r-major">
+                  <path transform="rotate(-36 600 600)" d="M600 52v30" /><path transform="rotate(-24 600 600)" d="M600 52v30" /><path transform="rotate(-12 600 600)" d="M600 52v30" /><path d="M600 52v30" /><path transform="rotate(12 600 600)" d="M600 52v30" /><path transform="rotate(24 600 600)" d="M600 52v30" /><path transform="rotate(36 600 600)" d="M600 52v30" />
+                </g>
+                <g class="r-num">
+                  <text data-rate="0.5" transform="rotate(-36 600 600)" x="600" y="126">0.5</text>
+                  <text data-rate="0.75" transform="rotate(-24 600 600)" x="600" y="126">0.75</text>
+                  <text data-rate="1" transform="rotate(-12 600 600)" x="600" y="126">1</text>
+                  <text data-rate="1.25" x="600" y="126">1.25</text>
+                  <text data-rate="1.5" transform="rotate(12 600 600)" x="600" y="126">1.5</text>
+                  <text data-rate="1.75" transform="rotate(24 600 600)" x="600" y="126">1.75</text>
+                  <text data-rate="2" transform="rotate(36 600 600)" x="600" y="126">2</text>
+                </g>
+              </g>
+              <circle class="r-hair r-in" cx="600" cy="600" r="470" />
+            </g>
+            <path class="r-index" d="M600 8 L600 40" />
+            <path class="r-index-tip" d="M593 44 L607 44 L600 54 Z" />
+          </svg>
+        </div>
+
+        <div class="hero-copy">
+          <p class="kicker"><span>A skin for Video.js 10</span></p>
+          <h1 id="hero-t"><span class="chrome" data-text="Iris">Iris</span></h1>
+          <p class="lede">A video player machined like a lens. Controls you already know how&nbsp;to&nbsp;read.</p>
+        </div>
+
+        <div class="stage-wrap">
+          <div class="hero-player">
+            <media-i18n>
+              <video-player content-title="Wing It!" poster="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=24&amp;width=1920">
+                <iris-skin>
+                  <mux-video src="https://stream.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc.m3u8" playsinline crossorigin preload="metadata">
+                    <track kind="chapters" label="Chapters" srclang="en" src="./wing-it-chapters.vtt" default />
+                    <track kind="captions" label="English (sounds)" srclang="en" src="./wing-it-captions.vtt" />
+                  </mux-video>
+                </iris-skin>
+              </video-player>
+            </media-i18n>
+          </div>
+          <svg class="shutter" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="bl-a" x1="12" y1="-6" x2="27" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a3b42" /><stop offset=".45" stop-color="#1c1d22" /><stop offset="1" stop-color="#0b0c0e" /></linearGradient></defs><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g></svg>
+        </div>
+        <p class="ring-note"><span class="ring-dot" aria-hidden="true"></span><span>The ring above follows the player’s speed. Change it with the 1× button, or press <kbd>&lt;</kbd> <kbd>&gt;</kbd>.</span></p>
+
+        <ul class="keys" aria-label="Keyboard shortcuts, once the player has focus">
+          <li><kbd>Space</kbd><kbd>K</kbd><span>Play / pause</span></li>
+          <li><kbd>←</kbd><kbd>→</kbd><span>Seek 10 s</span></li>
+          <li><kbd>↑</kbd><kbd>↓</kbd><span>Volume</span></li>
+          <li><kbd>&lt;</kbd><kbd>&gt;</kbd><span>Speed</span></li>
+          <li><kbd>M</kbd><span>Mute</span></li>
+          <li><kbd>C</kbd><span>Captions</span></li>
+          <li><kbd>F</kbd><span>Full screen</span></li>
+          <li><kbd>I</kbd><span>Picture in picture</span></li>
+          <li><kbd>0</kbd><kbd>9</kbd><span>Jump to 0–90%</span></li>
+        </ul>
+        <p class="credit"><cite>Wing It!</cite> (CC) Blender Foundation | <a href="https://studio.blender.org/projects/wing-it/">studio.blender.org</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Streamed from <a href="https://www.mux.com">Mux</a>.</p>
+      </section>
+
+      <section class="instrument" id="instrument" aria-labelledby="inst-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">01</span>The controls</p>
+          <h2 id="inst-t">The controls you know, easier to read.</h2>
+          <p class="sec-lede">Play, timeline, volume and speed sit where you expect them. Each one shows its own state on its face, so you can read the player at a glance without opening anything.</p>
+        </header>
+        <figure class="plate rv">
+          <div class="plate-img" data-focus="0">
+            <div class="zoom">
+              <img class="dof" src="./shots/dock.webp" width="2240" height="680" alt="" aria-hidden="true" loading="lazy" />
+              <img class="sharp" src="./shots/dock.webp" width="2240" height="680" alt="The Iris controls up close over a bright sky: a full-width timeline split into chapters, and under it the volume button, the round play button with its progress ring, and the speed button reading 1×." loading="lazy" />
+              <span class="lead" data-n="1" style="--x: 50%; --y: 20%; --h: 58.6%" aria-hidden="true"></span><span class="lead" data-n="2" style="--x: 43.66%; --y: 38%; --h: 41%" aria-hidden="true"></span><span class="lead" data-n="3" style="--x: 56.34%; --y: 38%; --h: 41%" aria-hidden="true"></span><span class="lead" data-n="4" style="--x: 24%; --y: 50%; --h: 20.4%" aria-hidden="true"></span>
+            <span class="tip" style="--x: 50%; --y: 78.6%" aria-hidden="true"></span><span class="tip" style="--x: 43.66%; --y: 79%" aria-hidden="true"></span><span class="tip" style="--x: 56.34%; --y: 79%" aria-hidden="true"></span><span class="tip" style="--x: 24%; --y: 70.4%" aria-hidden="true"></span>
+            <span class="pin" style="--x: 50%; --y: 20%" data-n="1" aria-hidden="true">1</span>
+            <span class="pin" style="--x: 43.66%; --y: 38%" data-n="2" aria-hidden="true">2</span>
+            <span class="pin" style="--x: 56.34%; --y: 38%" data-n="3" aria-hidden="true">3</span>
+            <span class="pin" style="--x: 24%; --y: 50%" data-n="4" aria-hidden="true">4</span>
+            </div>
+            <p class="focus-chip" aria-hidden="true"><span class="fc-n">1</span><span class="fc-t">Play button</span></p>
+          </div>
+          <figcaption>
+            <ol class="callouts">
+              <li data-n="1"><button type="button" aria-pressed="false"><b>Play button</b><span>Plays and pauses. The ring around it fills as the video plays, one arc for each chapter.</span></button></li>
+              <li data-n="2"><button type="button" aria-pressed="false"><b>Volume</b><span>The ring shows the level in ten steps. Hover and the button stretches into a scale; or press ↑ ↓.</span></button></li>
+              <li data-n="3"><button type="button" aria-pressed="false"><b>Speed</b><span>Always shows the current speed. Hover or tap to choose from seven speeds, 0.5× to 2×.</span></button></li>
+              <li data-n="4"><button type="button" aria-pressed="false"><b>Timeline</b><span>Split into chapters. Hover any moment to preview it: the preview opens from a circle to the full frame.</span></button></li>
+            </ol>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="coatings" id="coatings" aria-labelledby="coat-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">02</span>Fits any site</p>
+          <h2 id="coat-t">At home on any website.</h2>
+          <p class="sec-lede">The controls sit on dark frosted surfaces, so they stay readable over any video. A site changes one color and one corner radius, and every part of the player follows. Try it below.</p>
+        </header>
+        <div class="bench rv" role="group" aria-label="Preview settings">
+          <div class="ctl">
+            <p class="ctl-l" id="l-site">Site</p>
+            <div class="seg" role="radiogroup" aria-labelledby="l-site">
+              <button type="button" role="radio" aria-checked="true" data-host="journal">Journal</button>
+              <button type="button" role="radio" aria-checked="false" data-host="studio">Studio</button>
+              <button type="button" role="radio" aria-checked="false" data-host="brand">Brand</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <p class="ctl-l" id="l-dev">Device</p>
+            <div class="seg" role="radiogroup" aria-labelledby="l-dev">
+              <button type="button" role="radio" aria-checked="true" data-device="desktop">Desktop</button>
+              <button type="button" role="radio" aria-checked="false" data-device="phone">Phone</button>
+            </div>
+          </div>
+          <div class="ctl">
+            <p class="ctl-l" id="l-coat">Accent</p>
+            <div class="coats" role="radiogroup" aria-labelledby="l-coat">
+              <button type="button" role="radio" aria-checked="true" data-accent="" aria-label="Warm white, the default" style="--sw: #f6f2ea"></button>
+              <button type="button" role="radio" aria-checked="false" data-accent="#ff7a1a" aria-label="Orange" style="--sw: #ff7a1a"></button>
+              <button type="button" role="radio" aria-checked="false" data-accent="#2f55ff" aria-label="Blue" style="--sw: #2f55ff"></button>
+              <button type="button" role="radio" aria-checked="false" data-accent="#1fbf75" aria-label="Green" style="--sw: #1fbf75"></button>
+              <button type="button" role="radio" aria-checked="false" data-accent="#ff4f8b" aria-label="Pink" style="--sw: #ff4f8b"></button>
+              <button type="button" role="radio" aria-checked="false" data-accent="#1e3a8a" aria-label="Navy" style="--sw: #1e3a8a"></button>
+            </div>
+          </div>
+          <div class="ctl ctl-dial">
+            <p class="ctl-l" id="l-rad">Corner radius</p>
+            <div class="dialctl" role="slider" tabindex="0" aria-labelledby="l-rad" aria-valuemin="0" aria-valuemax="32" aria-valuenow="16" aria-valuetext="16 pixels">
+              <span class="dial-face" aria-hidden="true"><span class="dial-ticks"></span><span class="dial-mark"></span></span>
+              <output class="dial-v" aria-hidden="true">16</output>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage rv" data-host="journal" data-device="desktop">
+          <svg class="wipe" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bl-b" x1="12" y1="-6" x2="27" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a3b42" /><stop offset=".45" stop-color="#1c1d22" /><stop offset="1" stop-color="#0b0c0e" /></linearGradient></defs><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g></svg>
+          <div class="device">
+            <div class="host">
+              <div class="host-nav"><span class="host-logo"></span><span class="host-links"><i></i><i></i><i></i></span></div>
+              <div class="host-body">
+                <p class="host-kicker"></p>
+                <p class="host-h"></p>
+                <div class="host-player">
+                  <media-i18n>
+                    <video-player content-title="Wing It!" poster="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=136&amp;width=1280">
+                      <iris-skin>
+                        <mux-video src="https://stream.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc.m3u8" playsinline crossorigin preload="none">
+                          <track kind="chapters" label="Chapters" srclang="en" src="./wing-it-chapters.vtt" default />
+                          <track kind="captions" label="English (sounds)" srclang="en" src="./wing-it-captions.vtt" />
+                        </mux-video>
+                      </iris-skin>
+                    </video-player>
+                  </media-i18n>
+                </div>
+                <p class="host-line"></p><p class="host-line short"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="states" id="states" aria-labelledby="st-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">03</span>Every state</p>
+          <h2 id="st-t">Every moment of playback, designed.</h2>
+          <p class="sec-lede">From the first frame to the last, with a mouse, a keyboard or a thumb. Here are all 25 states, captured from the real player. Scroll the list, or pick one.</p>
+        </header>
+        <div class="sv rv">
+          <div class="sv-stick">
+            <figure class="sv-view" data-kind="desktop">
+              <div class="sv-frame">
+                <div class="sv-layer" data-kind="desktop"><img src="./states/prestart.webp" width="1792" height="1008" alt="Before playback: a large round play button in the middle of the poster." decoding="async" /></div>
+                <span class="sv-ring" aria-hidden="true"></span>
+              </div>
+              <figcaption class="sv-meta" aria-hidden="true"><span class="sv-pos"><b class="sv-cur">01</b> / 25</span><span class="sv-grp">Start and end</span><span class="sv-dev">Desktop</span></figcaption>
+            </figure>
+          </div>
+          <div class="sv-list" role="group" aria-label="Player states">
+          <section class="sv-g" aria-label="Start and end">
+            <h3 class="sv-gh">Start and end</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/prestart.webp" data-kind="desktop" data-group="Start and end" data-alt="Before playback: a large round play button in the middle of the poster." aria-current="true"><span class="sv-n">01</span><span class="sv-t"><b>Ready to play</b><span class="sv-d">Before the film starts, one large play button sits on the poster. Nothing else competes for attention.</span><span class="sv-how"><i>How</i>Click, tap or press <kbd>Space</kbd></span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/loading.webp" data-kind="desktop" data-group="Start and end" data-alt="Loading: a ring of ten steps in the middle of the frame, one step lit with a fading tail."><span class="sv-n">02</span><span class="sv-t"><b>Loading</b><span class="sv-d">While the video loads, a lit step ticks round a ring of ten, one step at a time like a watch.</span><span class="sv-how"><i>When</i>the network is slow, or you jump ahead</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/ended.webp" data-kind="desktop" data-group="Start and end" data-alt="At the end: a round replay button in the middle of a black frame."><span class="sv-n">03</span><span class="sv-t"><b>The end</b><span class="sv-d">When the film ends, one replay button appears in the middle.</span><span class="sv-how"><i>How</i>Click, tap or press <kbd>Space</kbd> to watch again</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/error.webp" data-kind="desktop" data-group="Start and end" data-alt="An error message, “Something went wrong”, with an OK button."><span class="sv-n">04</span><span class="sv-t"><b>Error</b><span class="sv-d">If the video can’t play, a short message says what went wrong, with one button to close it.</span><span class="sv-how"><i>When</i>the video can’t load</span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="Watching">
+            <h3 class="sv-gh">Watching</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/controls.webp" data-kind="desktop" data-group="Watching" data-alt="The controls over the film: the timeline, and below it the round play button between the volume and speed buttons."><span class="sv-n">05</span><span class="sv-t"><b>Controls showing</b><span class="sv-d">The timeline runs across the top. Play sits in the middle, with volume and speed on either side.</span><span class="sv-how"><i>How</i>Move the mouse, or tap the video</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/hidden.webp" data-kind="desktop" data-group="Watching" data-alt="The film playing with no controls on screen."><span class="sv-n">06</span><span class="sv-t"><b>Controls hidden</b><span class="sv-d">A few seconds into playback the controls fade away and leave the picture clean.</span><span class="sv-how"><i>When</i>the video plays and the mouse is still</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/pause.webp" data-kind="desktop" data-group="Watching" data-alt="Pausing: a lens in the middle of the frame with its blades closing around a pause symbol."><span class="sv-n">07</span><span class="sv-t"><b>Pause</b><span class="sv-d">A lens appears in the middle of the frame and closes its blades, so you see the pause happen.</span><span class="sv-how"><i>How</i><kbd>Space</kbd> <kbd>K</kbd> or click the video</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/fullscreen.webp" data-kind="desktop" data-group="Watching" data-alt="The player in full screen, with the full screen button enlarged into a dial."><span class="sv-n">08</span><span class="sv-t"><b>Full screen</b><span class="sv-d">In full screen the controls grow with the screen, and the button you used confirms the change.</span><span class="sv-how"><i>How</i><kbd>F</kbd> or double-click the video</span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="Finding a moment">
+            <h3 class="sv-gh">Finding a moment</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/preview.webp" data-kind="desktop" data-group="Finding a moment" data-alt="A preview of the whole frame above the timeline, labeled with the chapter “Liftoff” and the time."><span class="sv-n">09</span><span class="sv-t"><b>Preview</b><span class="sv-d">Hover the timeline and a preview opens from a circle to the full frame, with the chapter name and time.</span><span class="sv-how"><i>How</i>Hover the timeline</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/drag.webp" data-kind="desktop" data-group="Finding a moment" data-alt="Dragging the timeline: the preview reads “Crash landing, 2:41” with a line down to the timeline."><span class="sv-n">10</span><span class="sv-t"><b>Dragging</b><span class="sv-d">While you drag, the preview follows and a fine line marks the exact moment.</span><span class="sv-how"><i>How</i>Drag along the timeline</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/seek.webp" data-kind="desktop" data-group="Finding a moment" data-alt="After two presses of the right arrow, the play button has grown and reads 20s, and the film has moved on 20 seconds."><span class="sv-n">11</span><span class="sv-t"><b>Skip 10 seconds</b><span class="sv-d">Each press skips 10 seconds. The play button grows and counts the total.</span><span class="sv-how"><i>How</i><kbd>←</kbd> <kbd>→</kbd> or <kbd>J</kbd> <kbd>L</kbd></span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="Sound">
+            <h3 class="sv-gh">Sound</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/volume-slider.webp" data-kind="desktop" data-group="Sound" data-alt="The volume button stretched into a capsule to its left, with a speaker, a scale of ten steps filled to 60, and the number 60 at its end."><span class="sv-n">12</span><span class="sv-t"><b>Volume scale</b><span class="sv-d">Hover the volume button and it stretches left into a capsule with ten steps. Drag, click or scroll; the end shows the number.</span><span class="sv-how"><i>How</i>Hover the volume button</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/volume.webp" data-kind="desktop" data-group="Sound" data-alt="The volume button enlarged into a dial reading 65%."><span class="sv-n">13</span><span class="sv-t"><b>Volume by keyboard</b><span class="sv-d">The volume button grows into a dial and shows the level as a number.</span><span class="sv-how"><i>How</i><kbd>↑</kbd> <kbd>↓</kbd></span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/muted.webp" data-kind="desktop" data-group="Sound" data-alt="The volume dial reading 0% with a muted speaker icon."><span class="sv-n">14</span><span class="sv-t"><b>Mute</b><span class="sv-d">The dial reads 0% and the speaker shows muted. The volume ring stays dim until you unmute.</span><span class="sv-how"><i>How</i><kbd>M</kbd> or click the speaker</span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="Speed and quality">
+            <h3 class="sv-gh">Speed and quality</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/speed.webp" data-kind="desktop" data-group="Speed and quality" data-alt="Seven round speed buttons in a row over the controls, 1.5× selected."><span class="sv-n">15</span><span class="sv-t"><b>Speed choices</b><span class="sv-d">Hover or tap the speed button and seven speeds roll out, from 0.5× to 2×. One move to any speed.</span><span class="sv-how"><i>How</i>Hover or tap the speed button</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/speed-set.webp" data-kind="desktop" data-group="Speed and quality" data-alt="The speed button reading 1.5×."><span class="sv-n">16</span><span class="sv-t"><b>Current speed</b><span class="sv-d">The speed button always shows the speed you are watching at, and its ring fills to match.</span><span class="sv-how"><i>How</i><kbd>&lt;</kbd> <kbd>&gt;</kbd> step the speed</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/quality.webp" data-kind="desktop" data-group="Speed and quality" data-alt="The Settings menu open on Quality: Auto, 270p, 480p, 720p and 1080p HD."><span class="sv-n">17</span><span class="sv-t"><b>Quality</b><span class="sv-d">Settings opens straight on video quality: Auto, or a fixed size streamed from Mux.</span><span class="sv-how"><i>How</i>Click Settings</span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="Captions and help">
+            <h3 class="sv-gh">Captions and help</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/captions.webp" data-kind="desktop" data-group="Captions and help" data-alt="A sound caption, “[dog pants happily]”, above the controls."><span class="sv-n">18</span><span class="sv-t"><b>Captions</b><span class="sv-d">Captions sit above the controls, so the two never overlap.</span><span class="sv-how"><i>How</i>Click CC, or press <kbd>C</kbd></span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/captions-key.webp" data-kind="desktop" data-group="Captions and help" data-alt="The captions button enlarged into a dial reading On."><span class="sv-n">19</span><span class="sv-t"><b>Captions shortcut</b><span class="sv-d">The captions button grows to confirm the change, reading On or Off.</span><span class="sv-how"><i>How</i><kbd>C</kbd></span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/tooltip.webp" data-kind="desktop" data-group="Captions and help" data-alt="A tooltip above the full screen button: “Enter fullscreen”, with the key F."><span class="sv-n">20</span><span class="sv-t"><b>Button names</b><span class="sv-d">Hover any button to see its name and its keyboard shortcut.</span><span class="sv-how"><i>How</i>Hover a button</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/focus.webp" data-kind="desktop" data-group="Captions and help" data-alt="The play button with a white focus ring and a dark halo."><span class="sv-n">21</span><span class="sv-t"><b>Keyboard focus</b><span class="sv-d">A white ring with a dark halo shows where you are, on any frame.</span><span class="sv-how"><i>How</i><kbd>Tab</kbd></span></span></button></li>
+            </ol>
+          </section>
+          <section class="sv-g" aria-label="On a phone">
+            <h3 class="sv-gh">On a phone</h3>
+            <ol>
+              <li><button type="button" class="sv-i" data-src="./states/phone-playing.webp" data-kind="phone" data-group="On a phone" data-alt="A phone-sized player with the buttons in a row above the timeline."><span class="sv-n">22</span><span class="sv-t"><b>Phone layout</b><span class="sv-d">On small players the buttons move above the timeline, and every target is sized for a thumb.</span><span class="sv-how"><i>When</i>the player is narrower than 480 px</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/phone-preview.webp" data-kind="phone" data-group="On a phone" data-alt="A phone-sized player while scrubbing: a large preview labeled “Liftoff 2:13”."><span class="sv-n">23</span><span class="sv-t"><b>Phone preview</b><span class="sv-d">While you scrub, the buttons fade and the preview takes their space.</span><span class="sv-how"><i>How</i>Drag the timeline</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/phone-speed.webp" data-kind="phone" data-group="On a phone" data-alt="A phone-sized player with seven speed buttons in a row, 1.5× selected."><span class="sv-n">24</span><span class="sv-t"><b>Phone speed</b><span class="sv-d">The same seven speeds, sized for a thumb. Slide along them to choose.</span><span class="sv-how"><i>How</i>Tap the speed button</span></span></button></li>
+              <li><button type="button" class="sv-i" data-src="./states/phone-menu.webp" data-kind="phone" data-group="On a phone" data-alt="A phone-sized player with quality open as a sheet: Auto, 270p, 480p, 720p and 1080p HD."><span class="sv-n">25</span><span class="sv-t"><b>Phone settings</b><span class="sv-d">Menus open as a sheet across the bottom of the player, with large choices.</span><span class="sv-how"><i>How</i>Tap Settings</span></span></button></li>
+            </ol>
+          </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="thinking" id="thinking" aria-labelledby="th-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">04</span>Design thinking</p>
+          <h2 id="th-t">Why it looks like a lens.</h2>
+          <p class="sec-lede">A watch says a lot in a small, round space. Iris works the same way, borrowing from a camera lens and a watch. Four numbers explain most of it.</p>
+        </header>
+        <div class="dl-grid">
+          <article class="dl-item rv">
+            <div class="dl-bezel"><div class="dl-face">
+              <svg class="dl-ring" viewBox="0 0 274 274" aria-hidden="true"><circle cx="137" cy="137" r="118" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="8" stroke-dasharray="70.1 4" transform="rotate(-90 137 137)"/><circle cx="137" cy="137" r="118" fill="none" stroke="#eeede8" stroke-width="8" stroke-dasharray="70.1 4 70.1 4 70.1 4 70.1 4 70.1 4 70.1 4 70.1 1000" transform="rotate(-90 137 137)"/></svg>
+              <p class="dl-num"><b>10</b><span>Steps</span></p>
+            </div></div>
+            <h3>Volume, in detents</h3>
+            <p>Hover the dial and it stretches into a scale with the level at its end.</p>
+          </article>
+          <article class="dl-item rv">
+            <div class="dl-bezel"><div class="dl-face">
+              <svg class="dl-ring" viewBox="0 0 274 274" aria-hidden="true"><g fill="#85868c"><circle cx="54" cy="220" r="5"/><circle cx="29" cy="150" r="5"/><circle cx="47" cy="76" r="5"/><circle cx="137" cy="19" r="7" fill="#eeede8"/><circle cx="227" cy="76" r="5"/><circle cx="245" cy="150" r="5"/><circle cx="220" cy="220" r="5"/></g></svg>
+              <p class="dl-num"><b>7</b><span>Speeds · one move</span></p>
+            </div></div>
+            <h3>Any speed in one click</h3>
+            <p>Seven round keys roll out of the speed dial. Not a button pressed six times.</p>
+          </article>
+          <article class="dl-item rv">
+            <div class="dl-bezel"><div class="dl-face">
+              <svg class="dl-ring" viewBox="0 0 274 274" aria-hidden="true"><circle cx="137" cy="137" r="118" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="2"/><circle cx="137" cy="137" r="104" fill="none" stroke="rgba(255,255,255,.08)"/></svg>
+              <p class="dl-num"><b>0</b><span>Repeats</span></p>
+            </div></div>
+            <h3>Settings, straight to quality</h3>
+            <p>Rows appear only when there is a real choice. Nothing repeats a key already on screen.</p>
+          </article>
+          <article class="dl-item rv">
+            <div class="dl-bezel"><div class="dl-face">
+              <svg class="dl-ring" viewBox="0 0 274 274" aria-hidden="true"><circle cx="137" cy="137" r="118" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="10" stroke-dasharray="2 27.65" transform="rotate(-90 137 137)"/><circle cx="137" cy="137" r="118" fill="none" stroke="#eeede8" stroke-width="16" stroke-dasharray="2.5 739" transform="rotate(-91 137 137)"/></svg>
+              <p class="dl-num"><b>25</b><span>States</span></p>
+            </div></div>
+            <h3>Every state, designed</h3>
+            <p>Loading, errors, captions, phones. Dark frosted surfaces keep each one readable.</p>
+          </article>
+        </div>
+        <div class="dl-tiles">
+          <figure class="rv"><div class="dl-tile t-vol" role="img" aria-label="The volume dial stretched into its ten-step scale."></div><figcaption>Volume · real capture</figcaption></figure>
+          <figure class="rv"><div class="dl-tile t-spd" role="img" aria-label="The seven speed keys rolled out of the speed dial."></div><figcaption>Speed · real capture</figcaption></figure>
+          <figure class="rv"><div class="dl-tile t-qty" role="img" aria-label="Settings opened straight on the quality list."></div><figcaption>Settings · real capture</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="specs" id="specs" aria-labelledby="spec-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">05</span>Specifications</p>
+          <h2 id="spec-t">Built on Video.js 10. Sized by one number.</h2>
+          <p class="sec-lede">Every size in Iris is a multiple of <code>--media-scale-unit</code>, written <i>u</i> below. Change that one value and the whole player scales, from a small embed to full screen.</p>
+        </header>
+        <figure class="bp rv">
+          <div class="bp-top">
+            <p class="bp-title"><span>Drawing 01</span>Control row, to scale</p>
+            <div class="bp-unit">
+              <p class="ctl-l" id="l-unit">1u =</p>
+              <div class="seg" role="radiogroup" aria-labelledby="l-unit">
+                <button type="button" role="radio" aria-checked="false" data-unit="12">12 px</button>
+                <button type="button" role="radio" aria-checked="true" data-unit="16">16 px</button>
+                <button type="button" role="radio" aria-checked="false" data-unit="20">20 px</button>
+              </div>
+            </div>
+          </div>
+          <div class="bp-draw">
+            <svg viewBox="0 0 1120 400" role="img" aria-labelledby="bp-desc">
+              <desc id="bp-desc">Technical drawing of the Iris control row. The play button is 4u across, the volume and speed dials 3.125u, the other buttons 2.5u, with 0.875u between the dials and the play button. The timeline is 0.1875u high and 0.3125u on hover. At the default unit of 16 pixels, the play button is 64 pixels across.</desc>
+              <defs>
+                <marker id="bp-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1L9 5L0 9" /></marker>
+                <pattern id="bp-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" /></pattern>
+              </defs>
+              <rect class="bp-grid" width="1120" height="400" fill="url(#bp-grid)" />
+              <g class="bp-cl"><path d="M560 18V382" /><path d="M40 250H1080" /></g>
+              <g class="bp-part">
+                <text class="bp-time" x="60" y="155">0:46</text><text class="bp-time" x="1060" y="155" text-anchor="end">-3:11</text>
+                <rect x="112" y="147.4" width="896" height="5.2" rx="2.6" /><rect class="bp-fill" x="112" y="147.4" width="164" height="5.2" rx="2.6" />
+                <circle cx="95" cy="250" r="35" /><circle cx="175.5" cy="250" r="35" />
+                <circle cx="435.75" cy="250" r="43.75" /><circle class="bp-ringg" cx="435.75" cy="250" r="40" />
+                <circle class="bp-lens" cx="560" cy="250" r="56" /><circle class="bp-ringg" cx="560" cy="250" r="52" /><circle cx="560" cy="250" r="44" />
+                <circle cx="684.25" cy="250" r="43.75" /><circle class="bp-ringg" cx="684.25" cy="250" r="40" />
+                <circle cx="944.5" cy="250" r="35" /><circle cx="1025" cy="250" r="35" />
+                <path class="bp-ic" d="M553 238v24l19-12z" /><text class="bp-lbl" x="684.25" y="255">1×</text><text class="bp-lbl bp-sm" x="95" y="255">CC</text><path class="bp-st" d="M162 244h12M182 244h7M162 256h4M174 256h15" /><circle class="bp-st" cx="178" cy="244" r="3.4" /><circle class="bp-st" cx="170" cy="256" r="3.4" /><rect class="bp-st" x="931" y="240" width="27" height="20" rx="3.5" /><rect class="bp-ic" x="944" y="250" width="10" height="7" rx="1.5" /><path class="bp-st" d="M1013 245v-6h6M1031 239h6v6M1037 255v6h-6M1019 261h-6v-6" />
+                <path class="bp-ic" d="M424 243h6l8-7v28l-8-7h-6z" />
+              </g>
+              <g class="bp-dim">
+                <path d="M504 350H616" marker-start="url(#bp-ar)" marker-end="url(#bp-ar)" /><path class="bp-ext" d="M504 312V360M616 312V360" />
+                <text x="560" y="380" data-u="4">⌀ 4u</text>
+                <path d="M392 350H479.5" marker-start="url(#bp-ar)" marker-end="url(#bp-ar)" /><path class="bp-ext" d="M392 300V360M479.5 300V360" />
+                <text x="435.75" y="380" data-u="3.125">⌀ 3.125u</text>
+                <path d="M60 350H130" marker-start="url(#bp-ar)" marker-end="url(#bp-ar)" /><path class="bp-ext" d="M60 292V360M130 292V360" />
+                <text x="95" y="380" data-u="2.5">⌀ 2.5u</text>
+                <path d="M479.5 196H504" /><path class="bp-ext" d="M479.5 186V206M504 186V206" />
+                <path class="bp-lead" d="M492 196L466 180H256" /><text x="256" y="172" text-anchor="start" data-u="0.875">0.875u</text>
+                <path class="bp-lead" d="M1004 150L1036 108H1080" /><text x="1080" y="78" text-anchor="end" data-u="0.1875">0.1875u</text><text x="1080" y="99" text-anchor="end" data-u="0.3125" data-suffix=" on hover">0.3125u</text>
+                <g class="bp-wide"><path d="M560 28V60" marker-end="url(#bp-ar)" /><text x="574" y="44" text-anchor="start">Timeline, split by chapter</text></g>
+              </g>
+            </svg>
+          </div>
+          <figcaption class="bp-key"><span><b>u</b> = <code>--media-scale-unit</code>, 16 px unless you set it</span><span>Sizes step up at player widths of 1200, 1600 and 1920 px</span></figcaption>
+        </figure>
+        <dl class="sheet rv">
+          <div><dt>Player</dt><dd>Video.js 10.3, HTML</dd></div>
+          <div><dt>Made of</dt><dd>HTML and CSS in the Video.js skin format, plus one small script for the speed keys, the volume capsule, phone menus and focus</dd></div>
+          <div><dt>Video.js parts</dt><dd>Hotkeys, gestures, sliders, menus, tooltips, indicators, error dialog and status announcer</dd></div>
+          <div><dt>Layouts</dt><dd>Desktop, and a phone layout for players narrower than 480 px</dd></div>
+          <div><dt>Custom properties</dt><dd class="sheet-codes"><code>--media-accent-color</code><code>--media-accent-text-color</code><code>--media-border-color</code><code>--media-border-radius</code><code>--media-font-family</code><code>--media-scale-unit</code><code>--media-object-fit</code><code>--media-object-position</code></dd></div>
+          <div><dt>Video</dt><dd>HLS streamed from Mux: Auto, 1080p, 720p, 480p and 270p</dd></div>
+          <div><dt>Chapters and captions</dt><dd>WebVTT tracks. The sound captions were written for this film.</dd></div>
+          <div><dt>License</dt><dd>Apache 2.0</dd></div>
+          <div><dt>Made by</dt><dd>Sabik Biswas</dd></div>
+        </dl>
+      </section>
+
+      <section class="access" id="access" aria-labelledby="ax-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">06</span>Accessibility</p>
+          <h2 id="ax-t">Made for everyone, from the start.</h2>
+          <p class="sec-lede">Iris covers every point in the challenge’s accessibility guide, and an automated WCAG 2.1 AA check finds nothing to fix.</p>
+        </header>
+        <div class="ax-grid">
+          <article class="ax ax-wide ax-read rv">
+            <div class="ax-vis cmp" style="--cut: 50%">
+              <img class="cmp-a" src="./states/a11y-bright.webp" width="1792" height="1008" alt="The controls over a bright blue sky." loading="lazy" />
+              <img class="cmp-b" src="./states/a11y-dark.webp" width="1792" height="1008" alt="The same controls over a black frame." loading="lazy" />
+              <span class="cmp-line" aria-hidden="true"><span class="cmp-knob"><svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" /></svg></span></span>
+              <span class="cmp-tag cmp-tag-a" aria-hidden="true">Bright</span><span class="cmp-tag cmp-tag-b" aria-hidden="true">Dark</span>
+              <input class="cmp-range" type="range" min="0" max="100" value="50" aria-label="Compare the controls over a bright frame and a dark frame" />
+            </div>
+            <div class="ax-txt"><h3>Readable over any video</h3><p>Text and icons sit on dark frosted surfaces, never straight on the picture. They read the same over a bright sky and a black frame. Drag to compare.</p></div>
+          </article>
+          <article class="ax rv">
+            <div class="ax-vis zoomv" style="--ox: 50%; --oy: 100%; --zs: 2.3"><img src="./states/focus.webp" width="1792" height="1008" alt="The play button with a white focus ring and a dark halo." loading="lazy" /></div>
+            <div class="ax-txt"><h3>Focus you can see</h3><p>Press Tab and a white ring with a dark halo marks your place on any frame. A tap or click leaves no ring behind.</p></div>
+          </article>
+          <article class="ax ax-keys rv">
+            <div class="ax-vis keyv" aria-hidden="true">
+              <span><kbd>Tab</kbd><i>Move</i></span><span><kbd>Space</kbd><i>Play</i></span><span><kbd>←</kbd><kbd>→</kbd><i>Skip</i></span><span><kbd>↑</kbd><kbd>↓</kbd><i>Volume</i></span>
+              <span><kbd>M</kbd><i>Mute</i></span><span><kbd>C</kbd><i>Captions</i></span><span><kbd>F</kbd><i>Full screen</i></span><span><kbd>Esc</kbd><i>Close</i></span>
+            </div>
+            <div class="ax-txt"><h3>Every control by keyboard</h3><p>Tab reaches every control in the order you see them. Arrow keys move inside menus and the speed keys, and Esc closes them.</p></div>
+          </article>
+          <article class="ax rv">
+            <div class="ax-vis fitv"><img src="./states/a11y-targets.webp" width="716" height="402" alt="A phone-sized player with dashed outlines showing the touch area around each button and the timeline." loading="lazy" /></div>
+            <div class="ax-txt"><h3>Big enough for a thumb</h3><p>On touch screens every button and the timeline get a touch area of about 44 px, shown dashed here, without changing how they look.</p></div>
+          </article>
+          <article class="ax ax-calm rv">
+            <div class="ax-vis calmv" data-calm="false">
+              <svg class="calm-lens" viewBox="0 0 24 24" aria-hidden="true"><defs><clipPath id="calm-clip"><circle cx="12" cy="12" r="11" /></clipPath></defs><circle class="calm-glass" cx="12" cy="12" r="11" /><g class="calm-blades" clip-path="url(#calm-clip)"><g style="--i:0"><path d="M12 12L12 .6 21.9 6.3z" /></g><g style="--i:1"><path d="M12 12L12 .6 21.9 6.3z" /></g><g style="--i:2"><path d="M12 12L12 .6 21.9 6.3z" /></g><g style="--i:3"><path d="M12 12L12 .6 21.9 6.3z" /></g><g style="--i:4"><path d="M12 12L12 .6 21.9 6.3z" /></g><g style="--i:5"><path d="M12 12L12 .6 21.9 6.3z" /></g></g><circle class="calm-rim" cx="12" cy="12" r="11" /></svg>
+              <button type="button" class="calm-tog" aria-pressed="false"><span class="calm-sw" aria-hidden="true"></span>Reduced motion</button>
+            </div>
+            <div class="ax-txt"><h3>Calm on request</h3><p>With reduced motion on, rings stop sweeping, the lens blades stay still and the loading ring pulses instead of ticking. Changes fade instead. Try the switch.</p></div>
+          </article>
+          <article class="ax rv">
+            <div class="ax-vis zoomv" style="--ox: 47%; --oy: 79%; --zs: 2"><img src="./states/captions.webp" width="1792" height="1008" alt="A sound caption above the player controls." loading="lazy" /></div>
+            <div class="ax-txt"><h3>Captions that never collide</h3><p>Sound captions timed to the film. They lift above the controls whenever the controls are on screen.</p></div>
+          </article>
+          <article class="ax rv">
+            <div class="ax-vis srv" aria-hidden="true">
+              <p class="sr-h">What a screen reader hears</p>
+              <ol>
+                <li><i>slider</i>Seek</li>
+                <li><i>button</i>Play</li>
+                <li><i>button</i>Mute</li>
+                <li><i>button</i>Playback speed, 1×</li>
+                <li><i>button</i>Enable captions</li>
+                <li><i>button</i>Settings</li>
+                <li><i>button</i>Enter fullscreen</li>
+                <li class="sr-st"><i>status</i>Paused</li>
+              </ol>
+            </div>
+            <div class="ax-txt"><h3>Named for screen readers</h3><p>Every control has a name and a state, and changes like pausing or muting are announced.</p></div>
+          </article>
+          <article class="ax ax-checks rv">
+            <ul class="checks">
+              <li><b>0</b><span>violations in axe (WCAG 2.1 AA) at desktop and phone sizes, with menus open</span></li>
+              <li><b>HC</b><span>Windows high contrast: the player switches to system colors</span></li>
+              <li><b>RT</b><span>Reduced transparency: every surface turns solid</span></li>
+            </ul>
+            <div class="ax-txt"><h3>Checked, not assumed</h3><p>Tested with axe, with the keyboard alone and with touch at phone size, in Chrome and WebKit.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="install" id="install" aria-labelledby="ins-t">
+        <header class="sec-head rv">
+          <p class="eyebrow"><span class="no">07</span>Install</p>
+          <h2 id="ins-t">Add Iris to any page.</h2>
+          <p class="sec-lede">Three steps and no build tools. Or take the source and change anything.</p>
+        </header>
+        <div class="install-grid">
+        <ol class="steps">
+          <li class="step rv">
+            <div class="step-h"><span class="step-n" aria-hidden="true">1</span><h3>Load Iris</h3><button type="button" class="copy" data-copy="c1" aria-label="Copy step 1">Copy</button></div>
+            <pre tabindex="0" aria-label="Step 1 code"><code id="c1"><span class="tk">&lt;script</span> <span class="ta">type</span>=<span class="ts">"module"</span> <span class="ta">src</span>=<span class="ts">"<span class="js-origin">https://iris-player.netlify.app</span>/iris.js"</span><span class="tk">&gt;&lt;/script&gt;</span></code></pre>
+          </li>
+          <li class="step rv">
+            <div class="step-h"><span class="step-n" aria-hidden="true">2</span><h3>Wrap your video</h3><button type="button" class="copy" data-copy="c2" aria-label="Copy step 2">Copy</button></div>
+            <pre tabindex="0" aria-label="Step 2 code"><code id="c2"><span class="tk">&lt;media-i18n&gt;</span>
+  <span class="tk">&lt;video-player&gt;</span>
+    <span class="tk">&lt;iris-skin&gt;</span>
+      <span class="tk">&lt;mux-video</span> <span class="ta">src</span>=<span class="ts">"https://stream.mux.com/PLAYBACK_ID.m3u8"</span>
+                 <span class="ta">playsinline crossorigin</span><span class="tk">&gt;&lt;/mux-video&gt;</span>
+    <span class="tk">&lt;/iris-skin&gt;</span>
+  <span class="tk">&lt;/video-player&gt;</span>
+<span class="tk">&lt;/media-i18n&gt;</span></code></pre>
+            <p class="step-note">Any Video.js media element works, including a plain <code>&lt;video&gt;</code>.</p>
+          </li>
+          <li class="step rv">
+            <div class="step-h"><span class="step-n" aria-hidden="true">3</span><h3>Set your look</h3><button type="button" class="copy" data-copy="c3" aria-label="Copy step 3">Copy</button></div>
+            <pre tabindex="0" aria-label="Step 3 code"><code id="c3"><span class="tk">iris-skin</span> {
+  <span class="ta">--media-accent-color</span>: <span class="v-accent"><i class="v-sw"></i>#f6f2ea</span>;
+  <span class="ta">--media-border-radius</span>: <span class="v-radius">16px</span>;
+  <span class="ta">--media-scale-unit</span>: 16px;
+}</code></pre>
+            <p class="step-note">The color and radius follow what you picked in <a href="#coatings">Fits any site</a>.</p>
+          </li>
+        </ol>
+        <div class="routes">
+          <a class="route rv" href="./workbench/">
+            <span class="route-k">Own the source</span>
+            <b>Copy the skin into your project</b>
+            <span>Iris is plain HTML and CSS in the Video.js skin format. Start a project with <code>npx @videojs/cli skin create</code>, paste it in and change anything.</span>
+            <span class="route-go" aria-hidden="true">Open the workbench →</span>
+          </a>
+          <a class="route rv js-embed" href="./embed.html">
+            <span class="route-k">No scripts allowed?</span>
+            <b>Use the iframe embed</b>
+            <span>For site builders that won’t run scripts. Pass the color and radius in the link, like <code>?accent=f6f2ea&amp;radius=16</code>.</span>
+            <span class="route-go" aria-hidden="true">Open the embed →</span>
+          </a>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="finale" aria-hidden="true">
+        <svg viewBox="-120 -120 240 240">
+          <defs><radialGradient id="fin-glass" cx="0" cy="0" r="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3b4763" /><stop offset=".5" stop-color="#1a1f2b" /><stop offset="1" stop-color="#0c0e13" /></radialGradient>
+          <radialGradient id="fin-blade" cx="-30" cy="-40" r="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#383940" /><stop offset="1" stop-color="#15161a" /></radialGradient>
+          <linearGradient id="fin-sheen" x1="-70" y1="-80" x2="40" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".13" /><stop offset=".55" stop-color="#fff" stop-opacity="0" /></linearGradient></defs>
+          <circle class="fin-ticks" r="113" />
+          <circle class="fin-barrel" r="104" />
+          <circle class="fin-glass" r="100" />
+          <path class="fin-blades" d="" />
+          <path class="fin-edges" d="" />
+          <circle class="fin-sheen" r="100" />
+          <circle class="fin-rim" r="100" />
+        </svg>
+      </div>
+      <p class="foot-word">Iris</p>
+      <p><b>A skin for <a href="https://videojs.org">Video.js 10</a></b>, made by Sabik Biswas for the Video.js Skins Design Challenge on Contra. Apache 2.0.</p>
+      <p>Film: <cite>Wing It!</cite> (CC) Blender Foundation | <a href="https://studio.blender.org/projects/wing-it/">studio.blender.org</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Video hosting by <a href="https://www.mux.com">Mux</a>. Sound captions written for this demo.</p>
+      <p class="foot-links"><a href="./workbench/">Skin workbench</a><a href="./embed.html">Embed</a><a href="#top">Back to top</a></p>
+    </footer>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

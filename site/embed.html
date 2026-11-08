@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Iris player · Wing It!</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; }
+      body { display: grid; align-items: center; }
+    </style>
+  </head>
+  <body>
+    <!-- Embed page for other sites: <iframe src=".../embed.html?accent=0D99FF&radius=12" allow="fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+    <main>
+    <media-i18n>
+      <video-player content-title="Wing It!" poster="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=24&amp;width=1600">
+        <iris-skin>
+          <mux-video src="https://stream.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc.m3u8" playsinline crossorigin preload="none">
+            <track kind="chapters" label="Chapters" srclang="en" src="./wing-it-chapters.vtt" default />
+            <track kind="captions" label="English (sounds)" srclang="en" src="./wing-it-captions.vtt" />
+          </mux-video>
+        </iris-skin>
+      </video-player>
+    </media-i18n>
+    </main>
+    <script type="module" src="./embed.ts"></script>
+  </body>
+</html>

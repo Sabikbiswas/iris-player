@@ -1,0 +1,4 @@
+# Lets other sites (such as startuxdesign.com) load iris.js, its chunks and the caption files.
+# Netlify and Cloudflare Pages read this file; vercel.json carries the same header.
+/*
+  Access-Control-Allow-Origin: *

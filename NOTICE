@@ -1,0 +1,11 @@
+Iris, a skin for Video.js 10
+Copyright 2026 Sabik Biswas
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Built on Video.js 10 (https://videojs.org), also licensed under Apache 2.0.
+
+The demo film, Wing It! (CC) Blender Foundation | studio.blender.org, is licensed
+under CC BY 4.0 and streamed from Mux. It is not included in this repository.
+The sound captions and chapters in site/public and apps/preview/public were
+written for this demo.

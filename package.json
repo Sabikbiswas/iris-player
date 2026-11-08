@@ -1,0 +1,61 @@
+{
+  "name": "videojs-skin-iris",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "deploy": "node apps/preview/deploy.mjs",
+    "deploy:vercel": "npx --yes vercel@64 build && npx --yes vercel@64 deploy --prebuilt",
+    "deploy:netlify": "npx --yes netlify-cli@27 deploy --build",
+    "deploy:cloudflare": "npm run build:all && npx --yes wrangler@4 pages deploy dist-site --project-name iris",
+    "build:site": "vite build --config vite.site.config.ts",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:all": "npm run build && npm run build:site && npm run build:lib && node scripts/merge-workbench.mjs"
+  },
+  "dependencies": {
+    "@videojs/html": "10.3.0"
+  },
+  "devDependencies": {
+    "@base-ui/react": "^1.6.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@videojs/mux-video": "10.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  },
+  "license": "Apache-2.0",
+  "description": "Iris: a Video.js 10 skin shaped like a camera lens, read like a watch",
+  "author": "Sabik Biswas",
+  "homepage": "https://iris-player.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabikbiswas/iris-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sabikbiswas/iris-player/issues"
+  },
+  "keywords": [
+    "videojs",
+    "video.js",
+    "video-player",
+    "videojs-skin",
+    "skin",
+    "mux",
+    "web-components"
+  ],
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}
