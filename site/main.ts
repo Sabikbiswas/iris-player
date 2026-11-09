@@ -7,26 +7,16 @@ const $$ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = doc
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
 
-/* ── Hero: the aperture holds closed until 30% of the player is on screen (or it's touched), then opens.
-   30%, not 60%: on a 1440×900 laptop 38% shows on the first screen, so the lens opens in view; on smaller laptops
-   the closed blades sit at the fold and open with the first bit of scroll. If it qualifies right at load, it waits
-   a beat so the eye has landed on the page and sees the opening rather than missing it. ── */
+/* ── Hero: the aperture holds closed until the player is 60% on screen (or touched), then opens ── */
 {
   const wrap = $('.stage-wrap');
-  const BEAT = 700;
-  let queued = 0;
   const open = () => {
     if (wrap.hasAttribute('data-open')) return;
-    clearTimeout(queued);
     wrap.toggleAttribute('data-open', true);
     setTimeout(() => wrap.toggleAttribute('data-opened', true), 1600);
     io.disconnect();
   };
-  const io = new IntersectionObserver((es) => {
-    if (!es.some((e) => e.intersectionRatio >= 0.3) || queued) return;
-    const wait = Math.max(0, BEAT - performance.now());
-    if (wait) queued = window.setTimeout(open, wait); else open();
-  }, { threshold: [0, 0.3, 1] });
+  const io = new IntersectionObserver((es) => { if (es.some((e) => e.intersectionRatio >= 0.6)) open(); }, { threshold: [0, 0.6, 1] });
   io.observe(wrap);
   wrap.addEventListener('pointerdown', open, { capture: true });
   wrap.addEventListener('focusin', open);
@@ -148,21 +138,11 @@ const syncEmbed = () => {
 };
 {
   let t = 0;
-  let pending: (() => void)[] = [];
-  // Changes picked while the aperture is closing are queued and all applied behind the closed blades,
-  // so a quick Device-then-Site pick never drops the first choice.
   const wipe = (change: () => void) => {
     if (reduced.matches) { change(); return; }
-    pending.push(change);
-    if (stage.dataset.wipe === 'close') return;
     clearTimeout(t);
     stage.dataset.wipe = 'close';
-    t = window.setTimeout(() => {
-      const run = pending; pending = [];
-      run.forEach((fn) => fn());
-      stage.dataset.wipe = 'open';
-      t = window.setTimeout(() => delete stage.dataset.wipe, 640);
-    }, 340);
+    t = window.setTimeout(() => { change(); stage.dataset.wipe = 'open'; t = window.setTimeout(() => delete stage.dataset.wipe, 640); }, 340);
   };
   for (const group of $$('.bench [role="radiogroup"]')) radioGroup(group, (btn) => {
     const { host, device, accent } = btn.dataset;
@@ -188,7 +168,6 @@ const syncEmbed = () => {
     dial.setAttribute('aria-valuetext', `${value} pixels`);
     out.textContent = String(value);
     benchSkin.style.setProperty('--media-border-radius', `${value}px`);
-    stage.style.setProperty('--bench-r', `${value}px`);
     look.radius = value;
     if (vRadius.textContent !== `${value}px`) { vRadius.textContent = `${value}px`; flash(vRadius); }
     syncEmbed();
