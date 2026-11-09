@@ -166,9 +166,7 @@
               <button type="button" role="radio" aria-checked="false" data-accent="#ff7a1a" aria-label="Orange" style="--sw: #ff7a1a"></button>
               <button type="button" role="radio" aria-checked="false" data-accent="#2f55ff" aria-label="Blue" style="--sw: #2f55ff"></button>
               <button type="button" role="radio" aria-checked="false" data-accent="#1fbf75" aria-label="Green" style="--sw: #1fbf75"></button>
-              <button type="button" role="radio" aria-checked="false" data-accent="#ff4f8b" aria-label="Pink" style="--sw: #ff4f8b"></button>
-              <button type="button" role="radio" aria-checked="false" data-accent="#1e3a8a" aria-label="Navy" style="--sw: #1e3a8a"></button>
-            </div>
+              <button type="button" role="radio" aria-checked="false" data-accent="#ff4f8b" aria-label="Pink" style="--sw: #ff4f8b"></button>            </div>
           </div>
           <div class="ctl ctl-dial">
             <p class="ctl-l" id="l-rad">Corner radius</p>
@@ -183,10 +181,30 @@
           <svg class="wipe" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="bl-b" x1="12" y1="-6" x2="27" y2="6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3a3b42" /><stop offset=".45" stop-color="#1c1d22" /><stop offset="1" stop-color="#0b0c0e" /></linearGradient></defs><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g><g><path d="M12 12L12 -6 27 3.3z" /></g></svg>
           <div class="device">
             <div class="host">
-              <div class="host-nav"><span class="host-logo"></span><span class="host-links"><i></i><i></i><i></i></span></div>
+              <div class="hn" aria-hidden="true">
+                <span class="hn-edition" data-h="journal">Monday edition</span>
+                <span class="hn-logo" data-h="journal">The Long Take</span>
+                <span class="hn-logo" data-h="studio">KILN<sup>®</sup></span>
+                <span class="hn-logo" data-h="brand"><i class="hn-mark"></i>Halden</span>
+                <span class="hn-links" data-h="studio"><span>Work</span><span>Studio</span><span>Contact</span></span>
+                <span class="hn-links" data-h="brand"><span>Product</span><span>Lessons</span><span>Pricing</span></span>
+                <span class="hn-sub" data-h="journal">Subscribe</span>
+                <span class="hn-cta" data-h="brand">Start free</span>
+              </div>
               <div class="host-body">
-                <p class="host-kicker"></p>
-                <p class="host-h"></p>
+                <div class="hh" aria-hidden="true">
+                  <p class="hh-k" data-h="journal">Animation</p>
+                  <p class="hh-k" data-h="studio">Selected work — 01</p>
+                  <p class="hh-k" data-h="brand"><b>New</b>Video lessons are here</p>
+                  <p class="hh-t" data-h="journal">Inside <i>Wing It!</i>, a short film made in the open</p>
+                  <p class="hh-t" data-h="studio">Films that<br /><span>move people.</span></p>
+                  <p class="hh-t" data-h="brand">Learn it by watching it.</p>
+                  <p class="hh-d" data-h="journal">A cat builds a shuttle. A dog decides to fly it. Three minutes of cartoon chaos, and every step of the making shared publicly.</p>
+                  <p class="hh-d" data-h="studio">Character animation, from first sketch to final frame.</p>
+                  <p class="hh-d" data-h="brand">Short lessons you can pause, slow down and replay, on any screen.</p>
+                  <p class="hh-by" data-h="journal">By the Film Desk</p>
+                  <p class="hh-btns" data-h="brand"><span class="b1">Start free</span><span class="b2">See plans</span></p>
+                </div>
                 <div class="host-player">
                   <media-i18n>
                     <video-player content-title="Wing It!" poster="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=136&amp;width=1280">
@@ -199,7 +217,16 @@
                     </video-player>
                   </media-i18n>
                 </div>
-                <p class="host-line"></p><p class="host-line short"></p>
+                <div class="ha" aria-hidden="true">
+                  <p class="ha-cap" data-h="journal"><i>Wing It!</i> (CC) Blender Foundation.</p>
+                  <p class="ha-body" data-h="journal">The shuttle is held together with tape and optimism, and the film knows it. What lifts it is timing: every gag lands on the beat, and nothing is wasted.</p>
+                  <div class="ha-reel" data-h="studio">
+                    <figure><img src="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=110&amp;width=480" width="480" height="270" alt="" loading="lazy" /><figcaption><span>02</span>Liftoff</figcaption></figure>
+                    <figure><img src="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=150&amp;width=480" width="480" height="270" alt="" loading="lazy" /><figcaption><span>03</span>Wings out</figcaption></figure>
+                    <figure><img src="https://image.mux.com/lIEE8jhRtmZTwvTyz1t5V01b4PukwZBSzXHnuxMGMtRc/thumbnail.webp?time=168&amp;width=480" width="480" height="270" alt="" loading="lazy" /><figcaption><span>04</span>Crash landing</figcaption></figure>
+                  </div>
+                  <p class="ha-ticks" data-h="brand"><span>Captions on every lesson</span><span>Any speed</span><span>Phone, tablet or laptop</span></p>
+                </div>
               </div>
             </div>
           </div>

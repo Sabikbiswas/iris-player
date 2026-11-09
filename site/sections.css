@@ -260,7 +260,7 @@ pre code { font: inherit; color: inherit; }
 @media (width <= 900px) { .install-grid { grid-template-columns: minmax(0, 1fr); } .routes { position: static; } }
 @media (width <= 560px) { .step { padding-left: 0; } .steps::before { display: none; } .step-n { position: static; width: 32px; height: 32px; box-shadow: inset 0 0 0 1px var(--line-2); } pre { padding: 16px; font-size: 12.5px; } }
 
-/* ── Footer: the lens closes as the page ends ─────────────────────────────── */
+/* ── Footer: the lens opens as the page ends ─────────────────────────────── */
 .foot { max-width: var(--max); margin: 0 auto; padding: 72px var(--gut) 64px; display: flex; flex-direction: column; align-items: center; gap: 10px; border-top: 1px solid var(--line); text-align: center; color: var(--engrave-3); font-size: 14px; }
 .foot p { max-width: 80ch; margin: 0; }
 .foot b { color: var(--engrave-2); font-weight: 600; }
@@ -275,7 +275,7 @@ pre code { font: inherit; color: inherit; }
 .fin-edges { fill: none; stroke: rgb(255 255 255 / .34); stroke-width: 1.1; stroke-linecap: round; }
 .fin-sheen { fill: url(#fin-sheen); pointer-events: none; }
 .fin-rim { fill: none; stroke: rgb(255 255 255 / .22); stroke-width: 1.2; }
-.finale[data-shut] .fin-ticks { stroke: rgb(246 242 234 / .7); }
+.finale[data-done] .fin-ticks { stroke: rgb(246 242 234 / .7); }
 .foot-word { margin: 0 0 4px !important; font: 780 clamp(40px, 5vw, 60px)/1 var(--wide); font-variation-settings: "wdth" 125; letter-spacing: .01em;
   background: linear-gradient(180deg, #fff 0%, #c9cacf 45%, #6f7077 55%, #e9e9ec 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 @media (forced-colors: active) { .foot-word { color: CanvasText; background: none; } }
