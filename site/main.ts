@@ -138,11 +138,21 @@ const syncEmbed = () => {
 };
 {
   let t = 0;
+  let pending: (() => void)[] = [];
+  // Picks made while the aperture is closing are queued and all applied behind the closed blades,
+  // so a quick Device-then-Site pick never drops the first choice.
   const wipe = (change: () => void) => {
     if (reduced.matches) { change(); return; }
+    pending.push(change);
+    if (stage.dataset.wipe === 'close') return;
     clearTimeout(t);
     stage.dataset.wipe = 'close';
-    t = window.setTimeout(() => { change(); stage.dataset.wipe = 'open'; t = window.setTimeout(() => delete stage.dataset.wipe, 640); }, 340);
+    t = window.setTimeout(() => {
+      const run = pending; pending = [];
+      run.forEach((fn) => fn());
+      stage.dataset.wipe = 'open';
+      t = window.setTimeout(() => delete stage.dataset.wipe, 640);
+    }, 340);
   };
   for (const group of $$('.bench [role="radiogroup"]')) radioGroup(group, (btn) => {
     const { host, device, accent } = btn.dataset;

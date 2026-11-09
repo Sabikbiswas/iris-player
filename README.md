@@ -22,10 +22,12 @@ Made by Sabik Biswas for the Video.js Skins Design Challenge on Contra.
 
 ### One script
 
-Build the project (`npm run build:all`) and host `dist-site/iris.js` with its `iris-chunks/` folder, or load it from the deployed showcase. Then:
+Load a fixed version from jsDelivr (it never changes under you), load the latest from the showcase, or build the project (`npm run build:all`) and host `dist-site/iris.js` with its `iris-chunks/` folder yourself. Then:
 
 ```html
-<script type="module" src="https://iris-player.netlify.app/iris.js"></script>
+<!-- Fixed version, v1.0.0 -->
+<script type="module" src="https://cdn.jsdelivr.net/gh/Sabikbiswas/iris-player@v1.0.0/release/iris.js"></script>
+<!-- or the latest: https://iris-player.netlify.app/iris.js -->
 
 <media-i18n>
   <video-player>
@@ -115,7 +117,7 @@ npm run typecheck
 | --- | --- |
 | [`src/video/`](src/video) | The skin |
 | [`src/iris.ts`](src/iris.ts) | The `<iris-skin>` drop-in element |
-| [`site/`](site) | The showcase page: an engraved speed ring that follows the hero player's speed, the controls up close, a live accent and radius bench, all 25 player states captured from the real player (`site/public/states/`), design thinking, a to-scale drawing and spec sheet, accessibility, install steps, and a footer iris that closes as the page ends |
+| [`site/`](site) | The showcase page: an engraved speed ring that follows the hero player's speed, the controls up close, a live accent and radius bench, all 25 player states captured from the real player (`site/public/states/`), design thinking, a to-scale drawing and spec sheet, accessibility, install steps, and a footer iris that opens as the page ends |
 | [`apps/preview/`](apps/preview) | The Video.js skin workbench (from the CLI) |
 
 Every push to `main` is built by [GitHub Actions](.github/workflows/build.yml) (`npm ci`, typecheck, `build:all`). Deploy with `npm run deploy netlify` (or `vercel`, `cloudflare`). `netlify.toml` and `vercel.json` build everything and publish `dist-site/`.
