@@ -152,6 +152,13 @@ kbd {
   font-size: 14px;
   display: flex;
 }
+/* Between 1041 and 1180 px wide the links run past the middle of the bar and "Controls" sits on the dial's index
+   needle (the needle is always at the centre). A slightly tighter gap there keeps the links clear of it. */
+@media (1040px < width < 1180px) {
+  .bar nav {
+    gap: 18px;
+  }
+}
 .bar nav a {
   padding: 6px 0;
   text-decoration: none;
